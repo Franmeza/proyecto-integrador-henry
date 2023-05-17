@@ -1,0 +1,19 @@
+.navbar{
+    display: flex;
+    justify-content:space-between;
+    padding-left: 30px;
+}
+h1 {
+    font-family: 'rick and morty';
+    color:rgb(0, 255, 0);
+    font-size: 4em;
+
+ 
+}
+img{
+    background: black;
+}
+@font-face{
+    font-family: "rick and morty";
+    src: url('../../../get_schwifty.ttf');
+} 

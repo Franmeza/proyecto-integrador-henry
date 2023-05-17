@@ -1,0 +1,48 @@
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    background-color: aqua;
+    padding: 10px;
+    border-radius: 20px;
+    
+}
+h2{
+    color: #26235c;
+    font-size: 23px;
+    /* font-style: normal; */
+    font-weight: 400;
+    line-height: 28px;
+    /* margin-left: 25px; */
+    text-align: center;
+}
+.cardContainer img{
+    width: 200px;
+    height: 200px;
+    
+    
+}
+.data{
+    /* display: flex;
+    flex-direction: column; */
+    /* align-items: center; */
+    margin: 12px;
+    position: relative;
+}
+.data p {
+    margin-top: 0px;
+}
+.closeButton{
+    position: absolute;
+}
+.nombre{
+    font-weight: 700;
+    font-size: 30px;
+    font-family: "rick and morty";
+    color: red;
+}
+@font-face{
+    font-family: "rick and morty";
+    src: url('../../../get_schwifty.ttf');
+}    
+    

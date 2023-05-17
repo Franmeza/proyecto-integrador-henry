@@ -1,25 +1,37 @@
+import React from 'react';
+import { useState } from 'react';
 import './App.css';
-import Card from './components/Card.jsx';
-import Cards from './components/Cards.jsx';
-import SearchBar from './components/SearchBar.jsx';
-import {characters,  Rick } from './data.js';
+import Cards from './components/cards/Cards.jsx';
+import NavBar from './components/navBar/NavBar';
+import axios from 'axios';
 
 function App() {
-   // const id =;
+ 
+   const [characters, setCharacters] = useState([])
+   
+   function onSearch(id) {
+      if (characters.some((char) => char.id === parseInt(id)))
+       return alert (`El personaje con id ${id} ya ha sido agregado`)
+
+      axios (`https://rickandmortyapi.com/api/character/${id}`)
+      .then(({ data }) => {
+         if (data.name) {            
+            setCharacters([...characters, data]);
+         } 
+      }).catch((error) => alert('El id ingresado no es valido, por favor ingrese un numero entre 1 y 826',error))
+   }
+
+   const onClose = (id) => {
+      const resultado = characters.filter((character) => character.id  !== parseInt(id))
+      setCharacters(resultado)
+   }
+  
+
    return (       
       <div className='App'>         
-         <SearchBar onSearch={(characterID) => window.alert(characterID)                      }/>
-         <Cards characters={characters} />
-         <Card
-            id={Rick.id}
-            name={Rick.name}
-            status={Rick.status}
-            species={Rick.species}
-            gender={Rick.gender}
-            origin={Rick.origin.name}
-            image={Rick.image}
-            onClose={() => window.alert('Emulamos que se cierra la card')}
-         />
+         <NavBar onSearch = {onSearch}  />
+         <Cards characters={characters} onClose={onClose}/>       
+        
       </div>
    );
 }
