@@ -1,45 +1,52 @@
 .cardContainer {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    background-color: aqua;
-    padding: 10px;
-    border-radius: 20px;
-    
+    align-items: center;
+    background-color:rgba(116, 113, 136, 0.9);
+    padding-top: 10px;
+    margin-bottom: 10px;
+    border-radius:20px;
+    border: solid #00ff00;   
+    position: relative;    
 }
+
 h2{
-    color: #26235c;
+   
     font-size: 23px;
     /* font-style: normal; */
     font-weight: 400;
     line-height: 28px;
     /* margin-left: 25px; */
-    text-align: center;
+    /* text-align: center; */
 }
 .cardContainer img{
     width: 200px;
     height: 200px;
     
-    
 }
-.data{
-    /* display: flex;
-    flex-direction: column; */
-    /* align-items: center; */
-    margin: 12px;
-    position: relative;
-}
+
 .data p {
     margin-top: 0px;
 }
 .closeButton{
+    margin-left: 250px;
+    margin-right: 0px;
     position: absolute;
+    background-color:rgba(255, 255, 255, 0.5);
+    border-style: none;
+    color: #00ff00;
+
 }
 .nombre{
     font-weight: 700;
     font-size: 30px;
     font-family: "rick and morty";
-    color: red;
+    color: #35c9dd;   
+}
+
+.link{
+    text-decoration: none;
+    
 }
 @font-face{
     font-family: "rick and morty";

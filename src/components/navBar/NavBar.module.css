@@ -2,17 +2,33 @@
     display: flex;
     justify-content:space-between;
     padding-left: 30px;
+    margin-bottom: 17px;
+    align-items: baseline;
+    background-color: rgba(116, 113, 136, 0.5);
+    /* position: fixed; */
 }
 h1 {
     font-family: 'rick and morty';
     color:rgb(0, 255, 0);
-    font-size: 4em;
+    font-size: 4em; 
+}
+.buttonContainer{
+    display: flex;
+}
+button{
+    height: 30px;
+    border-radius: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+    font-weight: 600;
+    margin-right: 10px;
+}
 
- 
+.navbar img{
+    width: 18%;
 }
-img{
-    background: black;
-}
+
 @font-face{
     font-family: "rick and morty";
     src: url('../../../get_schwifty.ttf');
