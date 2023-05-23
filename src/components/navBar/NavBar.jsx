@@ -19,7 +19,7 @@ export default function NavBar (props){
             <Link to = "/home"><button>Home</button></Link>
             <Link to = "/about"><button>About</button></Link>
             </div>            
-            
+            <button onClick={props.logout}>Logout</button>
             <SearchBar onSearch ={props.onSearch} randomId = {addRandomCharacter}></SearchBar>
         </div>
         
