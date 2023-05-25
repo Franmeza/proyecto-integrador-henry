@@ -6,10 +6,14 @@
     padding-top: 10px;
     margin-bottom: 10px;
     border-radius:20px;
-    border: solid #00ff00;   
-    position: relative;    
-}
+    border: solid #00ff00;
 
+    /* position: relative;     */
+}
+.data{      
+   text-align: left; 
+   
+}
 h2{
    
     font-size: 23px;

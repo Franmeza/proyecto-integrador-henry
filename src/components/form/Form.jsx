@@ -36,12 +36,13 @@ export default function Form({login}) {
           src="https://www.icegif.com/wp-content/uploads/2022/06/icegif-519.gif"
           alt="gif"
         />
-        <div>
+        <div className={styles.emailContainer}>
           <label htmlFor="email">
             <strong>Email</strong>
           </label>
           <br />
           <input
+            className={styles.emailInput}
             type="text"
             name="email"
             value={userData.email}
@@ -49,14 +50,16 @@ export default function Form({login}) {
             size="25"
             onChange={handleChange}
           />
-          <p>{errors.email}</p>
+          <br />
+          <span className={styles.errorEmail}>{errors.email}</span>
         </div>
         <div>
-          <label htmlFor="password">
+          <label htmlFor="password" >
             <strong>Password</strong>
           </label>
           <br />
           <input
+            className={styles.passwordInput}
             type="text"
             name="password"
             value={userData.password}
@@ -64,7 +67,8 @@ export default function Form({login}) {
             size="25"
             onChange={handleChange}
           />
-          <p>{errors.password}</p>
+          <br />
+          <span className={styles.errorPassword}>{errors.password}</span>
         </div>
         <button className={styles.submit} type="submit">
           Log In

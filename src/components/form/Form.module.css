@@ -5,7 +5,7 @@ form{
     background-color:rgba(116, 113, 136, 0.8);
     width: 20%;    
     text-align: center; 
-    /* padding: 0px; */
+    /* padding: 0px; */   
    
 } 
 
@@ -16,6 +16,7 @@ form{
 form input{
     border-radius: 8px;
     height: 20px;
+    margin-top: 10px;
 }
 img{
     width: 60%;
@@ -28,5 +29,18 @@ img{
     display: flex;
    justify-content: center;
    margin-top: 160px;  
-  
+}
+
+.errorEmail{
+    font-size: 13px;
+    color: red;
+    font-weight: 700;    
+    /* margin-top: -5px;
+    margin-right: -10px; */
+}
+
+.errorPassword{
+    font-size: 13px;
+    color: red;
+    font-weight: 700;
 }
