@@ -1,6 +1,5 @@
 import Card from '../card/Card';
 import styles from './Cards.module.css'
-import { useState } from 'react';
 
 export default function Cards(props) {
 
@@ -18,8 +17,7 @@ export default function Cards(props) {
                gender={character.gender}
                origin={character.origin.name}
                image={character.image}
-               onClose = {props.onClose}/>
-                 
+               onClose = {props.onClose}/>                
            
          })}
       </div>
