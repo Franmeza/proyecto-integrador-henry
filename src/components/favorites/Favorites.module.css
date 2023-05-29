@@ -1,0 +1,8 @@
+.selectContainer{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 15px;
+
+    /* align-items: flex-start; */
+    /* position: absolute; */
+}

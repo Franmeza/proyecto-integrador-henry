@@ -9,10 +9,8 @@ function Card (props) {
   const[isFav, setIsFav] = useState(false)
 
   const myFavorites = useSelector((state)=> state.myFavorites)
-  const dispatch = useDispatch()
-  
-  console.log('my favorites', myFavorites);
-  
+  const dispatch = useDispatch()  
+
   function handleFavorite (){
     if(isFav){
       setIsFav(false)      
