@@ -37,6 +37,7 @@ function rootReducer(state = initialState, action) {
           if (action.payload === "D") return b.id - a.id;
 
           return 0;
+          //se peude resumir  payload ===A ? a.id - b.id : b.id - a.id
         }),
       };
     case SHOW_ALL:
