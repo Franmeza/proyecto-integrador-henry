@@ -52,8 +52,9 @@ h2{
     text-decoration: none;
     
 }
-@font-face{
+/* @font-face{
     font-family: "rick and morty";
-    src: url('../../../get_schwifty.ttf');
-}    
+    src: url('../../../get_schwifty.ttf');    
+    font-display: auto;
+}     */
     

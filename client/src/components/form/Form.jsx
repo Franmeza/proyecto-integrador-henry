@@ -45,7 +45,7 @@ export default function Form({login}) {
             className={styles.emailInput}
             type="text"
             name="email"
-            value={userData.email}
+            // value={userData.email}
             placeholder="Enter your email"
             size="25"
             onChange={handleChange}
@@ -62,7 +62,7 @@ export default function Form({login}) {
             className={styles.passwordInput}
             type="text"
             name="password"
-            value={userData.password}
+            // value={userData.password}
             placeholder="Enter your password"
             size="25"
             onChange={handleChange}

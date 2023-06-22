@@ -8,18 +8,26 @@ const initialState = {
 function rootReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_FAV:
+      // return {
+      //   ...state,
+      //   myFavorites: [...state.myFavorites, action.payload],
+      //   allCharacters: [...state.myFavorites, action.payload],
+      // };
       return {
         ...state,
-        myFavorites: [...state.myFavorites, action.payload],
-        allCharacters: [...state.myFavorites, action.payload],
+        myFavorites: action.payload,
+        allCharacters: action.payload,
       };
+
     case REMOVE_FAV:
-      return {
-        ...state,
-        myFavorites: state.myFavorites.filter(
-          (myFavorite) => myFavorite.id !== parseInt(action.payload)
-        ),
-      };
+      // return {
+      //   ...state,
+      //   myFavorites: state.myFavorites.filter(
+      //     (myFavorite) => myFavorite.id !== parseInt(action.payload)
+      //   ),
+      // };
+      return { ...state, myFavorites: action.payload };
+
     case FILTER:
       return {
         ...state,
@@ -41,7 +49,7 @@ function rootReducer(state = initialState, action) {
         }),
       };
     case SHOW_ALL:
-      return {...state, myFavorites: state.allCharacters} ;
+      return { ...state, myFavorites: state.allCharacters };
 
     default:
       return { ...state };

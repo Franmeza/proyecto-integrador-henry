@@ -10,8 +10,6 @@ import Favorites from './components/favorites/Favorites';
 import axios from 'axios';
 import {Routes, Route, useLocation, useNavigate} from "react-router-dom"
 
-const EMAIL = 'francisco@rickandmorty.com';
-const PASSWORD = '1234569';
 
 function App() { 
    
@@ -42,11 +40,21 @@ function App() {
       return <NavBar onSearch = {onSearch} logout = {logout}/>
    }
    
+   // function login(userData) {
+   //    if (userData.password === PASSWORD && userData.email === EMAIL) {
+   //       setAccess(true);
+   //       navigate('/home');
+   //    }
+   // }
+
    function login(userData) {
-      if (userData.password === PASSWORD && userData.email === EMAIL) {
-         setAccess(true);
-         navigate('/home');
-      }
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+         const { access } = data;
+         setAccess(data);
+         access && navigate('/home');
+      });
    }
 
    function logout(){
@@ -54,9 +62,9 @@ function App() {
       navigate('/')
    }
    
-   // useEffect(() => {
-   //    !access && navigate('/');
-   // }, [access]);
+   useEffect(() => {
+      !access && navigate('/');
+   }, [access]);
 
    return (       
       <div className='App'>
