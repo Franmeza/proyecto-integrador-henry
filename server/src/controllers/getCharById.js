@@ -13,18 +13,19 @@ function getCharById(req,res){
        const character = { 
         id:id,
         name: data.name,
-        gender: data.geneder,
+        gender: data.gender,
         species: data.species,
         origin: data.origin,
         image: data.image,
         status: data.status
        }
+       //es importante hacer la validacion de que la data exista antes de enviar una respuesta
        if(character.name)res.status(200).json(character)
-       else res.status(404).json({message: 'Not found'})
-       
+       else res.status(404).json({message: data.error}) 
+       //ya que la API proporciona el mensaje de error podemos extraerlo de la respuesta       
     })
-    .catch((error)=>{
-     res.status(500).json({message: 'Server failed'},error)
+    .catch((reason)=>{
+     res.status(500).send({message: reason})
     })
 }
 

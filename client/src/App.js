@@ -39,14 +39,15 @@ function App() {
    if(location.pathname !== "/")
       return <NavBar onSearch = {onSearch} logout = {logout}/>
    }
-   
+   //ANTES DE EXPRESS
    // function login(userData) {
    //    if (userData.password === PASSWORD && userData.email === EMAIL) {
    //       setAccess(true);
    //       navigate('/home');
    //    }
    // }
-
+   
+   //DESPUES DE EXPRESS
    function login(userData) {
       const { email, password } = userData;
       const URL = 'http://localhost:3001/rickandmorty/login/';
