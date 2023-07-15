@@ -38,7 +38,7 @@ export default function Form({login}) {
         />
         <div className={styles.emailContainer}>
           <label htmlFor="email">
-            <strong>Email</strong>
+            <strong>Email</strong>(francisco@rickandmorty.com)
           </label>
           <br />
           <input
@@ -55,7 +55,7 @@ export default function Form({login}) {
         </div>
         <div>
           <label htmlFor="password" >
-            <strong>Password</strong>
+            <strong>Password</strong>(1234569)
           </label>
           <br />
           <input
