@@ -12,14 +12,23 @@
 .buttonContainer {
   display: flex;
 }
+.logout {
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
 button {
-  height: 30px;
+  height: 40px;
   border-radius: 10px;
   padding-right: 10px;
   padding-left: 10px;
   text-align: center;
   font-weight: 600;
   margin-right: 10px;
+}
+.homeButton,
+.aboutButton,
+.favoritesButton {
+  background-color: #35c9dd;
 }
 .navbar img {
   width: 20%;

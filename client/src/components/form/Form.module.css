@@ -1,46 +1,48 @@
-form{
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
-    background-color:rgba(116, 113, 136, 0.8);
-    width: 20%;    
-    text-align: center; 
-    /* padding: 0px; */   
-   
-} 
-
-.submit{
-    margin: 10px 10px;
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(116, 113, 136, 0.8);
+  width: 310px;
+  height: 450px;
+  border-radius: 1rem;
 }
 
-form input{
-    border-radius: 8px;
-    height: 20px;
-    margin-top: 10px;
-}
-img{
-    width: 60%;
-    margin-top: 10px;
-    border-radius: 50%;
-    margin-right: 0px;
-
-}
-.formContainer{
-    display: flex;
-   justify-content: center;
-   margin-top: 160px;  
+.submit {
+  margin: 10px 10px;
 }
 
-.errorEmail{
-    font-size: 13px;
-    color: red;
-    font-weight: 700;    
-    /* margin-top: -5px;
-    margin-right: -10px; */
+form input {
+  border-radius: 8px;
+  height: 20px;
+  margin-top: 10px;
+}
+img {
+  width: 60%;
+  margin-top: 10px;
+  border-radius: 50%;
+  margin-right: 0px;
+}
+.formContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  height: 100vh;
 }
 
-.errorPassword{
-    font-size: 13px;
-    color: red;
-    font-weight: 700;
+.errorEmail {
+  font-size: 13px;
+  color: red;
+  font-weight: 700;
+  /* margin-top: -5px;
+      margin-right: -10px; */
+}
+
+.errorPassword {
+  font-size: 13px;
+  color: red;
+  font-weight: 700;
 }
