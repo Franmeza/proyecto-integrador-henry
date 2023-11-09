@@ -8,6 +8,7 @@ import Detail from "./components/detail/Detail";
 import Form from "./components/form/Form";
 import Favorites from "./components/favorites/Favorites";
 import axios from "axios";
+
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { removeFav } from "./redux/actions";
@@ -17,12 +18,12 @@ function App() {
   const navigate = useNavigate();
   const [characters, setCharacters] = useState([]);
   const [access, setAccess] = useState(false);
-
+  const URL = process.env.REACT_APP_API_URL;
   function onSearch(id) {
     if (characters.some((char) => char.id === parseInt(id)))
       return alert(`El personaje con id ${id} ya ha sido agregado`);
 
-    axios(`http://localhost:3001/rickandmorty/character/${id}`)
+    axios(`${URL}/rickandmorty/character/${id}`)
       .then(({ data }) => {
         if (data.name) {
           setCharacters([...characters, data]);
@@ -58,12 +59,14 @@ function App() {
   //DESPUES DE EXPRESS
   function login(userData) {
     const { email, password } = userData;
-    const URL = "http://localhost:3001/rickandmorty/login/";
-    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-      const { access } = data;
-      setAccess(data);
-      access && navigate("/home");
-    });
+    const endpoint = `${URL}/rickandmorty/login/`;
+    axios(endpoint + `?email=${email}&password=${password}`).then(
+      ({ data }) => {
+        const { access } = data;
+        setAccess(data);
+        access && navigate("/home");
+      }
+    );
   }
 
   function logout() {

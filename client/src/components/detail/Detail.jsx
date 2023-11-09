@@ -6,24 +6,22 @@ import styles from "./Detail.module.css";
 const Detail = () => {
   const { id } = useParams();
   const [character, setCharacter] = useState({});
-
+  const URL = process.env.REACT_APP_API_URL;
   useEffect(() => {
-    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
-      ({ data }) => {
-        if (data.name) {
-          setCharacter({
-            name: data.name,
-            status: data.status,
-            species: data.species,
-            gender: data.gender,
-            origin: data.origin.name,
-            image: data.image,
-          });
-        } else {
-          window.alert("No hay personajes con ese ID");
-        }
+    axios(`${URL}/rickandmorty/character/${id}`).then(({ data }) => {
+      if (data.name) {
+        setCharacter({
+          name: data.name,
+          status: data.status,
+          species: data.species,
+          gender: data.gender,
+          origin: data.origin.name,
+          image: data.image,
+        });
+      } else {
+        window.alert("No hay personajes con ese ID");
       }
-    );
+    });
     return setCharacter({});
   }, [id]);
 
