@@ -22,13 +22,13 @@ export default function NavBar(props) {
             Home
           </button>
         </Link>
-        <Link to="/about">
+        {/* <Link to="/about">
           <button
             className={location.pathname === "/about" ? styles.aboutButton : ""}
           >
             About
           </button>
-        </Link>
+        </Link> */}
         <Link to="/favorites">
           <button
             className={
