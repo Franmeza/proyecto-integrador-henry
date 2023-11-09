@@ -21,7 +21,7 @@ server.use(express.json());
 server.use("/rickandmorty", mainRouter);
 
 conn
-  .sync({ force: false }) //"force:true" => cada vez q se sincronice , borre toda la base de datos y crea las tablas en base a los modelos
+  .sync({ force: true }) //"force:true" => cada vez q se sincronice , borre toda la base de datos y crea las tablas en base a los modelos
   .then(() => {
     server.listen("3001", () => {
       console.log("Server raised in port: ", 3001);
