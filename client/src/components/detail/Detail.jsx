@@ -28,32 +28,34 @@ const Detail = () => {
   }, [id]);
 
   return (
-    <div className={styles.containerDetail}>
-      <div className={styles.innerContainer}>
-        <img src={character.image} alt="imagen" />
-        <section className={styles.info}>
-          <h2>
-            <strong>NAME: </strong>
-            {character.name}
-          </h2>
+    <div className={styles.mainContainer}>
+      <div className={styles.containerDetail}>
+        <div className={styles.innerContainer}>
+          <img src={character.image} className={styles.image} alt="imagen" />
+          <section className={styles.info}>
+            <h2>
+              <strong>NAME: </strong>
+              {character.name}
+            </h2>
 
-          <h2>
-            <strong>Status: </strong>
-            {character.status}
-          </h2>
-          <h2>
-            <strong>Species: </strong>
-            {character.species}
-          </h2>
-          <h2>
-            <strong>Gender: </strong>
-            {character.gender}
-          </h2>
-          <h2>
-            <strong>Origin: </strong>
-            {character.origin}
-          </h2>
-        </section>
+            <h2>
+              <strong>Status: </strong>
+              {character.status}
+            </h2>
+            <h2>
+              <strong>Species: </strong>
+              {character.species}
+            </h2>
+            <h2>
+              <strong>Gender: </strong>
+              {character.gender}
+            </h2>
+            <h2>
+              <strong>Origin: </strong>
+              {character.origin}
+            </h2>
+          </section>
+        </div>
       </div>
     </div>
   );

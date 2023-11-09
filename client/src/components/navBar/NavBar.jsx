@@ -17,14 +17,14 @@ export default function NavBar(props) {
       <div className={styles.buttonContainer}>
         <Link to="/home">
           <button
-            className={location.pathname === "/home" && styles.homeButton}
+            className={location.pathname === "/home" ? styles.homeButton : ""}
           >
             Home
           </button>
         </Link>
         <Link to="/about">
           <button
-            className={location.pathname === "/about" && styles.aboutButton}
+            className={location.pathname === "/about" ? styles.aboutButton : ""}
           >
             About
           </button>
@@ -32,7 +32,7 @@ export default function NavBar(props) {
         <Link to="/favorites">
           <button
             className={
-              location.pathname === "/favorites" && styles.favoritesButton
+              location.pathname === "/favorites" ? styles.favoritesButton : ""
             }
           >
             Favorites
