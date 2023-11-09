@@ -3,7 +3,7 @@ const mainRouter = require("./routes/index");
 const server = express();
 const app = require("./app");
 const { conn } = require("./DB_connection");
-const PORT = 3001;
+const PORT = process.env.PORT;
 
 server.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -23,8 +23,8 @@ server.use("/rickandmorty", mainRouter);
 conn
   .sync({ force: true }) //"force:true" => cada vez q se sincronice , borre toda la base de datos y crea las tablas en base a los modelos
   .then(() => {
-    server.listen("3001", () => {
-      console.log("Server raised in port: ", 3001);
+    server.listen(PORT, () => {
+      console.log(`Server raised in port:, ${PORT}`);
     });
   })
   .catch((err) => console.log(err));
