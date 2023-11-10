@@ -11,9 +11,18 @@ const UserModel = require("./models/User");
 // URL ----> postgres://DB_USER:DB_PASSWORD@DB_HOST/rickandmorty
 const database = new Sequelize(
   // URL
-  //   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
-  "postgres://rick_and_morty_nf0m_user:I4JsMd6geHrly48wMfYTSQIh6wV6w5aP@dpg-cl6bk9hk857s73cqqku0-a/rick_and_morty_nf0m",
-  { logging: false, native: false }
+  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+
+  {
+    logging: false,
+    native: false,
+    //   dialectOptions: {
+    //     ssl: {
+    //       require: true,
+    //       rejectUnauthorized: false, // Solo si tu certificado SSL no es de confianza
+    //     },
+    //   },
+  }
 );
 
 // EJERCICIO 05

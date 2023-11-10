@@ -8,6 +8,7 @@ import Detail from "./components/detail/Detail";
 import Form from "./components/form/Form";
 import Favorites from "./components/favorites/Favorites";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -58,15 +59,23 @@ function App() {
 
   //DESPUES DE EXPRESS
   function login(userData) {
+    Swal.fire({
+      title: "Please Wait...",
+      html: "Give it some time to load as this app is hosted in a free hosting service. If it takes too much time, reload the page. Thanks!",
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading();
+      },
+    });
     const { email, password } = userData;
     const endpoint = `${URL}/rickandmorty/login/`;
-    axios(endpoint + `?email=${email}&password=${password}`).then(
-      ({ data }) => {
+    axios(endpoint + `?email=${email}&password=${password}`)
+      .then(({ data }) => {
         const { access } = data;
         setAccess(data);
         access && navigate("/home");
-      }
-    );
+      })
+      .finally(Swal.close());
   }
 
   function logout() {

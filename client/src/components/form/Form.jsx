@@ -1,33 +1,35 @@
 import React, { useState } from "react";
 import styles from "./Form.module.css";
-import validate from "./validation.js"
+import validate from "./validation.js";
 
-export default function Form({login}) {
-
+export default function Form({ login }) {
   const [userData, setUserData] = useState({
     email: "",
     password: "",
   });
-  
+
   const [errors, setErrors] = useState({
     email: "",
     password: "",
-  })
+  });
 
   const handleChange = (event) => {
     const property = event.target.name;
     const value = event.target.value;
-    setUserData({...userData, [property]:value})
-    setErrors(validate({
+    setUserData({ ...userData, [property]: value });
+    setErrors(
+      validate({
         ...userData,
-        [property]:value
-    }))
+        [property]: value,
+      })
+    );
   };
-  
+
   const handleSubmit = (event) => {
-    event.preventDefault()
-    login(userData)
-  }
+    event.preventDefault();
+
+    login(userData);
+  };
 
   return (
     <div className={styles.formContainer}>
@@ -54,7 +56,7 @@ export default function Form({login}) {
           <span className={styles.errorEmail}>{errors.email}</span>
         </div>
         <div>
-          <label htmlFor="password" >
+          <label htmlFor="password">
             <strong>Password</strong>(1234569)
           </label>
           <br />
