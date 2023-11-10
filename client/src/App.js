@@ -67,15 +67,38 @@ function App() {
         Swal.showLoading();
       },
     });
+
     const { email, password } = userData;
     const endpoint = `${URL}/rickandmorty/login/`;
+
     axios(endpoint + `?email=${email}&password=${password}`)
       .then(({ data }) => {
         const { access } = data;
-        setAccess(data);
-        access && navigate("/home");
+
+        if (access) {
+          setAccess(data);
+          navigate("/home");
+        } else {
+          // Manejar caso en el que el acceso no es verdadero
+          Swal.fire({
+            icon: "error",
+            title: "Login Failed",
+            text: "Invalid email or password. Please try again.",
+          });
+        }
       })
-      .finally(Swal.close());
+      .catch((error) => {
+        // Manejar errores de la solicitud al servidor
+        console.error("Error during login:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "An error occurred during login. Please try again.",
+        });
+      })
+      .finally(() => {
+        Swal.close();
+      });
   }
 
   function logout() {
