@@ -16,12 +16,12 @@ const database = new Sequelize(
   {
     logging: false,
     native: false,
-    //   dialectOptions: {
-    //     ssl: {
-    //       require: true,
-    //       rejectUnauthorized: false, // Solo si tu certificado SSL no es de confianza
-    //     },
-    //   },
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false, // Solo si tu certificado SSL no es de confianza
+      },
+    },
   }
 );
 
